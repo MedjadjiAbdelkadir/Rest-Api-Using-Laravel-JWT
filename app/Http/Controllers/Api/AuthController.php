@@ -4,21 +4,29 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Traits\General;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Auth;
 use JWTAuth;
-use App\GeneralTrait;
-use Traits\GeneralTrait as TraitsGeneralTrait;
+
+
 
 class AuthController extends Controller{
     
     //--------------------------------------------------------------------------------------//
-    use TraitsGeneralTrait;
+    use General;
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+      //  $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
+
+    public function getUsers()
+    {
+        
+
+        return response()->json("Hello");
     }
 
     
@@ -82,7 +90,7 @@ class AuthController extends Controller{
     //--------------------------------------------------------------------------------------//
 
     public function refresh() {
-        return $this->createNewToken(auth()->refresh());
+        // return $this->createNewToken(auth()->refresh());
     } // End refresh function
 
     //--------------------------------------------------------------------------------------//
@@ -98,7 +106,7 @@ class AuthController extends Controller{
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth('api')->factory()->getTTL() * 60,
+            // 'expires_in' => auth('api')->factory()->getTTL() * 60,
             'user' => auth('api')->user()
         ]);
 

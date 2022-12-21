@@ -27,8 +27,10 @@ use Illuminate\Support\Facades\Route;
 |  /api/auth/logout
 |--------------------------------------------------------------------------
 */
+
 Route::group(['namespace'=>'Api'] , function(){
-    
+    Route::get('/users', [AuthController::class, 'getUsesr']);
+
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
 

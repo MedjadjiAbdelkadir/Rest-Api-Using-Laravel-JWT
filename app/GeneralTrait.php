@@ -1,8 +1,8 @@
 <?php
 
-namespace Traits;
+namespace App\Traits;
 
-trait GeneralTrait{
+Trait General{
     
     public function returnError($errNum, $msg){
         return response()->json([
