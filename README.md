@@ -4,10 +4,13 @@ Laravel Reset Api Using JWT Authentication
 ## Screenshots
 ### Register Page 
 <img src="" width="95%" height="500">
+
 ### login Page
 <img src="" width="95%" height="500">
+
 ### user-profile Page
 <img src="" width="95%" height="500">
+
 ### logout Page
 <img src="" width="95%" height="500">
 
